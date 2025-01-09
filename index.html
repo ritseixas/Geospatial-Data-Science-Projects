@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Rita Seixas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+        }
+        p {
+            text-align: justify;
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            background-color: #ffffff;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #35424a;
+            margin-top: 0;
+        }
+        .project {
+            margin-bottom: 2rem;
+        }
+        .project-thumbnail-container {
+            display: flex; /* Mantém alinhado */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            margin: 0 auto; /* Centraliza o container */
+        }
+        .project-thumbnail {
+            width: auto; /* Permite largura original */
+            height: auto; /* Permite altura original */
+            max-width: 60%; /* Garante que a imagem não ultrapasse o container */
+            max-height: 80%; /* Garante que a altura seja responsiva */
+            border: none; /* Remove o rebordo */
+        }
+        .project-text {
+            margin-bottom: 1rem;
+        }
+        .project-description {
+            font-size: 0.9em; /* Tamanho da fonte reduzido */
+        }
+        .pdf-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .pdf-link:hover {
+            background-color: #2c3e50;
+        }
+        .about-me {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .about-content {
+            flex: 1;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .contact-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            transition: opacity 0.3s ease;
+        }
+        .contact-icon:hover {
+            opacity: 0.7;
+        }
+
+        /* Adicione estas regras para dispositivos móveis */
+        @media (max-width: 768px) {
+            .about-me {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+            .about-content {
+                flex: none;
+            }
+        }
+
+        /* Adicione esta regra para estilizar o link */
+        .about-content a {
+            color: #35424a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfólio de Rita Seixas</h1>
+    </header>
+    <main>
+        <section id="sobre">
+            <div class="about-me">
+                <img src="Pics/eu.jpeg" alt="Rita Seixas" class="profile-pic">
+                <div class="about-content">
+                    <h2>Sobre mim</h2>
+                    <p> Hello, my name is Rita Seixas. I recently completed a postgraduate degree in <b>Geospatial Data Science</b> and I intend to direct my career towards Geographic Information Systems, which is the area I am most enthusiastic about and to which I want to be deeply dedicated.</p>
+                    <p><a href="PDF's/CV_Rita_Seixas_2025.pdf" target="_blank">Here you can find my CV</a></p>
+                </div>
+            </div>
+        </section>
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <p>This postgraduate course gave me the opportunity to explore practical topics across various disciplines aligned with my interests. Here are some of my favorite projects:</p>
+            <p></p>
+            <div class="project">
+                <h3>1. Deteção Remota </h3>
+                <h4>Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal</h4>
+                <div class="project-thumbnail-container">
+                    <img src="Pics/DR.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+                </div>
+                <div class="project-text">
+                    <p class="project-description">Este projeto pretendeu comparar <b>Classificadores Supervisionados</b> e <b>Classificadores não Supervisionados</b> para detetar áreas queimadas nos incêndios de 2017 no Pinhal Interior, em Portugal. Para obter dados e analisar as informações, foram utilizadas imagens de satélite do <b>Sentinel-2</b> e ferramentas como o <b>NDVI</b>  (Índice de Vegetação por Diferença Normalizada) e a Análise de <b>Componentes Principais</b> (PCA). Para a comparação final dos resultados, foi aplicado o classificador de Máxima Verossimilhança</b> (supervisionado) e o <b>Isodata Clustering</b> (não supervisionado), com a validação conduzida por meio de <b>matrizes de confusão</b>.</p>
+                    <p>•	<b>Ferramentas Utilizadas:</b> Sentinel 2, ArcGIS Pro, NDVI, PCA, Classificador de Máxima Verossimilhança (supervisionado) e o Isodata Clustering (não supervisionado)</p>
+                                    </div>
+                <a href="PDF's/Trabalho_Prático_RSA_maio_2024.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+            </div>
+            <div class="project">
+                <h3>2. Base de Dados Espacial </h3>
+                <h4>Modelação de uma Base de Dados sobre desastres marítimos mundiais</h4>
+                <div class="project-thumbnail-container">
+                    <img src="Pics/desenho fisico.png" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+                </div>
+                <div class="project-text">
+                    <p class="project-description">Este projeto consistiu em construir uma base de dados espacial utilizando <b>Microsoft Access</b> e <b>ArcGIS Pro</b>  para analisar <b>Desastres Marítimos</b>  ocorridos entre 1983 e 2020. O processo incluiu a identificação das cardinalidades e relações entre as entidades relevantes, bem como a definição dos atributos. As consultas SQL permitiram atender às queries necessárias, enquanto a integração com o ArcGIS Pro, via <b>ODBC</b>, possibilitou a visualização espacial dos desastres através da criação de mapas.</p>
+                    <p>•	<b>Ferramentas Utilizadas: </b> Microsoft Access, ArcGIS Pro, SQL</p>
+                                    </div>
+                <a href="PDF's/Trabalho_BDE_RitaSeixas_Final.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+            </div>
+            <div class="project">
+                <h3>3. Ciências Cartográficas</h3>
+                <h4>Técnicas de aquisição de informação georreferenciada na Atividade Vulcânica: Uma Perspetiva Cartográfica</h4>
+                <div class="project-thumbnail-container">
+                    <img src="Pics/cc.png" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+                </div>
+                <div class="project-text">
+                    <p class="project-description">O trabalho focou-se nas técnicas de aquisição de dados geoespaciais que costumam ser aplicadas à monitorização da <b>Atividade Vulcânica</b>. Foram analisadas as técnicas de <b>Fotogrametria</b>, <b>Termografia</b>, <b>Laser Scanning</b> e <b>Deteção Remota</b>, importantes para criar mapas detalhados de áreas vulcânicas, assim como a sua importância no estudo e prevenção de desastres naturais.</p>
+                    <p>•	<b>Ferramentas Analisadas:</b> Fotogrametria, Termografia, Varrimento Laser, Deteção Remota por Satélite</p>
+                                    </div>
+                <a href="PDF's/Trabalho_Final_CC_Rita_Seixas.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+            </div>
+            <div class="project">
+                <h3>4. Análise & Visualização de Dados Espaciais em ArcGis</h3>
+                <h4>Identificação dos locais mais fustigados pelo efeito das Ilhas De Calor Urbano no município de Lisboa</h4>
+                <div class="project-thumbnail-container">
+                    <img src="Pics/OC.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+                </div>
+                <div class="project-text">
+                    <p class="project-description">Neste trabalho, o objetivo foi compreender a distribuição das <b>Ilhas De Calor Urbano</b>  na cidade de Lisboa, utilizando <b>ArcGIS Pro</b>  para visualizar dados espaciais e mapear as áreas mais afetadas. A análise envolveu identificar as zonas da cidade mais propensas ao efeito de calor urbano, assim como os espaços verdes e elementos mitigadores, como corpos d'água, que poderiam ajudar a combater esse fenômeno. Além disso, foi realizada uma análise de acessibilidade, calculando a percentagem de população que vive a menos de cinco minutos de um parque ou área verde.</p>
+                    <p>•	<b>Ferramentas Utilizadas:</b> ArcGIS Pro, Ferramentas de análise espacial</p>
+                                    </div>
+                <a href="PDF's/Trabalho_AVDE_RitaSeixas.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+            </div>
+            <div class="project">
+                <h3>5. Modelação em SIG </h3>
+                <h4>Análise multicritério - Identificação dos locais onde seria mais oportuno instalar parques urbanos, no combate aos efeitos sentido pelas Ilhas de calor urbano, no Município de Lisboa</h4>
+                <div class="project-thumbnail-container">
+                    <img src="Pics/modsig.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+                </div>
+                <div class="project-text">
+                    <p class="project-description">Neste projeto, foi desenvolvida uma <b> Análise Multicritério</b>  para identificar os melhores locais para a instalação de novos parques urbanos em Lisboa, como forma de mitigar o efeito das ilhas de calor urbano. Utilizei o método de <b> Weighted Overlay</b>  no ArcGIS Pro</b>, combinando cinco critérios relevantes, como densidade populacional, áreas urbanizadas, proximidade a espaços verdes e níveis de calor urbano. A análise resultou em um mapa de aptidão, destacando os locais mais adequados para novos espaços verdes</b>.</p>
+                    <p>•	<b>Ferramentas Utilizadas:</b> ArcGIS Pro, Weighted Overlay.</p>
+                                    </div>
+                <a href="PDF's/Trabalho_final_MODSIG_Rita_Seixas.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+            </div>
+            <div class="project">
+            <h3>6. Estatística Espacial</h3>
+            <h4>Interpolação estatística das anomalias de temperatura do ar, e a sua relação com as Ilhas De Calor Urbano, no município de Lisboa</h4>
+            <div class="project-thumbnail-container">
+                <img src="Pics/stat-krigging.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+            </div>
+            <div class="project-text">
+                <p class="project-description">O trabalho desta disciplina consistiu em aplicar métodos de <b>Interpolação Espacial</b>  para analisar as anomalias de temperatura do ar em Lisboa e sua relação com as ilhas de calor urbano. Utilizei dados de 80 estações meteorológicas espalhadas pela cidade e apliquei métodos como <b> IDW</b> (Inverse Distance Weighted), <b> Ordinary Kriging e Empirical Bayesian Kriging (EBK)</b> para estimar a distribuição de temperatura. A interpolação permitiu criar um mapa detalhado das anomalias de temperatura e comparar os resultados com o mapa padrão de ilhas de calor urbano.</p>
+                <p>•	<b> Ferramentas Utilizadas: </b> ArcGIS Pro, IDW, Kriging, EBK</p>
+                                </div>
+            <a href="PDF's/Trabalho_Estatítica_Espacial_VF_Rita_Seixas.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+        
+        </div>
+        <div class="project">
+        <h3>7. Programação Geoespacial</h3>
+        <h4>Análise das anomalias da temperatura do ar e o efeito das “Ilhas de Calor Urbano” na cidade de Lisboa: Uma abordagem geoespacial com Python e ArcGIS Pro</h4>
+        <div class="project-thumbnail-container">
+            <img src="Pics/python.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+        </div>
+        <div class="project-text">
+            <p class="project-description">Neste projeto, desenvolvi um script em <b>Python</b> com a biblioteca <b>Arcpy</b> no <b>ArcGIS Pro</b> para analisar as anomalias de temperatura do ar e o efeito das ilhas de calor urbano em Lisboa. O código foi projetado para automatizar o processamento dos <b>dados de temperatura de 80 estações meteorológicas</b> e criar shapefiles com as médias de temperatura nas freguesias mais afetadas, como Santa Maria Maior e Parque das Nações. O script também permitiu identificar outliers e realizar análises estatísticas das temperaturas, evidenciando as áreas mais vulneráveis ao efeito de ilhas de calor urbano.</p>
+            <p>•	<b> Ferramentas Utilizadas: </b>Python, Arcpy, Visual Studio Code, ArcGIS Pro </p>
+                            </div>
+        <a href="PDF's/Trabalho_Programação_RitaSeixas_VF.pdf" class="pdf-link" target="_blank">Ler trabalho</a>       
+        
+        </div>
+        <div class="project">
+            <h3>8. Data Mining</h3>
+            <h4>Técnicas de Machine Learning em contexto Geoespacial</h4>
+            <div class="project-thumbnail-container">
+                <img src="Pics/dm2.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
+            </div>
+            <div class="project-text">
+                <p class="project-description">No âmbito dos modelos <b>não-supervisionados</b>, aplicou-se o <b>clustering</b>, que incluiu técnicas como <b>K-means</b>, para segmentar dados em grupos baseados nas suas semelhanças, sem utilizar rótulos predefinidos. 
+                    Os modelos <b>supervisionados</b>, como as <b>Redes neuronais artificiais</b> e as <b>Árvores de decisão</b>, são aplicados para prever e classificar novos dados, com base na aprendizagem de padrões identificados nos dados de treino.</p>
+                <p>•	<b>Ferramentas Utilizadas:</b> KNIME Analytics, Excel, e ArcGIS Pro</p>
+                                </div>
+            <a href="PDF's/Trabalho_Final_Data_Mining_Rita_Seixas.pdf" class="pdf-link" target="_blank">Ler trabalho</a>
+        </div>
+        </section>
+        <section id="contato">
+            <h2>Contacto</h2>
+            <p>Email: rita-seixas@hotmail.com</p>
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/rita-seixas-3996a8139/details/experience/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg" alt="LinkedIn" class="contact-icon">
+                </a>
+                <a href="https://github.com/ritseixas" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" alt="GitHub" class="contact-icon">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
