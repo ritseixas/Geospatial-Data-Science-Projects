@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,20 +13,20 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+
         header {
             background-color: #35424a;
             color: #ffffff;
             text-align: center;
             padding: 1rem;
         }
-        p {
-            text-align: justify;
-        }
+
         main {
             padding: 2rem;
             max-width: 800px;
             margin: auto;
         }
+
         section {
             background-color: #ffffff;
             margin-bottom: 2rem;
@@ -33,48 +34,50 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        /* ===== TÍTULOS (ESPAÇAMENTO CORRIGIDO) ===== */
         h1, h2, h3, h4 {
             color: #35424a;
             margin-top: 0;
         }
-        .project {
-            margin-bottom: 2rem;
+
+        h2 {
+            margin-bottom: 0.5rem;
         }
-        .project-thumbnail-container {
-            display: flex; /* Mantém alinhado */
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            margin: 0 auto; /* Centraliza o container */
+
+        h3 {
+            margin-bottom: 0.3rem;
         }
-        .project-thumbnail {
-            width: auto; /* Permite largura original */
-            height: auto; /* Permite altura original */
-            max-width: 60%; /* Garante que a imagem não ultrapasse o container */
-            max-height: 80%; /* Garante que a altura seja responsiva */
-            border: none; /* Remove o rebordo */
+
+        h4 {
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+            font-weight: normal;
         }
-        .project-text {
-            margin-bottom: 1rem;
+
+        p {
+            text-align: justify;
+            margin-top: 0.3rem;
+            margin-bottom: 0.6rem;
         }
-        .project-description {
-            font-size: 0.9em; /* Tamanho da fonte reduzido */
+
+        /* ===== LISTAS COMPACTAS ===== */
+        .compact-list {
+            margin-top: 0.3rem;
+            padding-left: 1.2rem;
         }
-        .pdf-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #35424a;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 3px;
+
+        .compact-list li {
+            margin-bottom: 0.2rem;
         }
-        .pdf-link:hover {
-            background-color: #2c3e50;
-        }
+
+        /* ===== ABOUT ===== */
         .about-me {
             display: flex;
             align-items: flex-start;
             gap: 2rem;
         }
+
         .profile-pic {
             width: 200px;
             height: 200px;
@@ -82,67 +85,11 @@
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
         .about-content {
             flex: 1;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .contact-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
 
-        .contact-icon {
-            width: 32px;
-            height: 32px;
-            transition: opacity 0.3s ease;
-        }
-        .contact-icon:hover {
-            opacity: 0.7;
-        }
-
-        /* Adicione estas regras para dispositivos móveis */
-        @media (max-width: 768px) {
-            .about-me {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .profile-pic {
-                width: 150px;
-                height: 150px;
-            }
-            .about-content {
-                flex: none;
-            }
-        }
-
-        /* Adicione esta regra para estilizar o link */
         .about-content a {
             color: #35424a;
             text-decoration: none;
@@ -152,29 +99,146 @@
         .about-content a:hover {
             text-decoration: underline;
         }
+
+        /* ===== PROJECTS ===== */
+        .project {
+            margin-bottom: 2rem;
+        }
+
+        .project-thumbnail-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .project-thumbnail {
+            max-width: 60%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .project-description {
+            font-size: 0.9em;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #35424a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .pdf-link:hover {
+            background-color: #2c3e50;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .about-me {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            .project-thumbnail {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1></h1>
-    </header>
-    <main>
-        <section id="sobre">
-            <div class="about-me">
-                <img src="Pics/eu.jpeg" alt="Rita Seixas" class="profile-pic">
-                <div class="about-content">
-                    <h2>About me</h2>
-                    <p> Hello, my name is Rita Seixas. I recently completed a postgraduate degree in <b>Geospatial Data Science</b> and I intend to direct my career towards <b>Geographic Information Systems (GIS)</b>, which is the area I am most enthusiastic about and to which I want to be deeply dedicated.</p>
-                    <p><a href="PDF's/CV_Rita_Seixas_2025.pdf" target="_blank">Here you can find my CV</a></p>
-                </div>
-            </div>
-        </section>
-        <section id="projetos">
-            <h2>Projetcs</h2>
-            <p>This postgraduate course gave me the opportunity to explore practical topics across various disciplines aligned with my interests. Here are some of my favorite projects:</p>
-            <p></p>
-            <div class="project">
-                <h3>1. Deteção Remota </h3>
+
+<header></header>
+
+<main>
+
+<section id="sobre">
+    <div class="about-me">
+        <img src="Pics/eu.jpeg" alt="Rita Seixas" class="profile-pic">
+        <div class="about-content">
+            <h2>About me</h2>
+            <p>Hello, my name is Rita Seixas. I recently completed a postgraduate degree in <b>Geospatial Data Science</b> and I intend to direct my career towards <b>Geographic Information Systems (GIS)</b>.</p>
+            <p><a href="PDF's/CV_Rita_Seixas_2025.pdf" target="_blank">Here you can find my CV</a></p>
+        </div>
+    </div>
+</section>
+
+<section id="projetos">
+    <h2>PÓS GRADUAÇÃO: NOVA IMS – GEOSPATIAL DATA SCIENCE</h2>
+    <p>This postgraduate course gave me the opportunity to explore practical topics across various disciplines aligned with my interests.</p>
+
+    <h2>Subjects</h2>
+    <ul class="compact-list">
+        <li>Análise & Visualização de Dados Espaciais</li>
+        <li>Modelação em SIG</li>
+        <li>Ciência & Sistemas de Informação Geográfica</li>
+        <li>Estatística Espacial</li>
+        <li>Programação Geoespacial</li>
+        <li>Ciências Cartográficas & Aquisição de Dados</li>
+        <li>Bases de Dados Espaciais</li>
+        <li>Deteção Remota</li>
+    </ul>
+
+    <h2>Softwares</h2>
+    <ul class="compact-list">
+        <li><b>SQL:</b> Microsoft Access & ArcGIS Pro</li>
+        <li><b>Python:</b> Arcpy no ArcGIS Pro (VS Code)</li>
+        <li><b>KNIME:</b> Data mining & machine learning visual</li>
+    </ul>
+
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>1. Deteção Remota</h3>
                 <h4>Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal</h4>
                 <div class="project-thumbnail-container">
                     <img src="Pics/DR.jpg" alt="Avaliação de classificadores de imagens de satélite para deteção de zonas ardidas: caso do incêndio de 17 a 24 de junho de 2017, na zona do Pinhal Interior, em Portugal" class="project-thumbnail" onclick="openModal(this.src)">
