@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* ===== TÍTULOS (ESPAÇAMENTO CORRIGIDO) ===== */
+        /* ===== TÍTULOS ===== */
         h1, h2, h3, h4 {
             color: #35424a;
             margin-top: 0;
@@ -61,7 +61,7 @@
             margin-bottom: 0.6rem;
         }
 
-        /* ===== LISTAS COMPACTAS ===== */
+        /* ===== LISTAS ===== */
         .compact-list {
             margin-top: 0.3rem;
             padding-left: 1.2rem;
@@ -98,6 +98,18 @@
 
         .about-content a:hover {
             text-decoration: underline;
+        }
+
+        /* ===== VIDEO ===== */
+        .video-section {
+            text-align: center;
+        }
+
+        .presentation-video {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         /* ===== PROJECTS ===== */
@@ -177,6 +189,7 @@
 
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
+
             .about-me {
                 flex-direction: column;
                 align-items: center;
@@ -191,6 +204,10 @@
             .project-thumbnail {
                 max-width: 100%;
             }
+
+            .presentation-video {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -201,20 +218,44 @@
 
 <main>
 
+<!-- ABOUT -->
 <section id="sobre">
     <div class="about-me">
-        <img src="Pics/eu.jpeg" alt="Rita Seixas" class="profile-pic">
+        <img src="Pics/eu.png" alt="Rita Seixas" class="profile-pic">
+
         <div class="about-content">
             <h2>About me</h2>
-            <p>Hello, my name is Rita Seixas. I recently completed a postgraduate degree in <b>Geospatial Data Science</b> and I intend to direct my career towards <b>Geographic Information Systems (GIS)</b>.</p>
-            <p><a href="PDF's/CV_Rita_Seixas_2025.pdf" target="_blank">Here you can find my CV</a></p>
+
+            <p>
+                Hello, my name is Rita Seixas. I recently completed a postgraduate degree in 
+                <b>Geospatial Data Science</b> and I am looking to build my career in the field of Geographic Information Systems (GIS).</b>
+            </p>
+
+            <p>
+                <a href="PDF's/CV_Rita_Seixas_2025.pdf" target="_blank">
+                    Click to find my CV
+                </a>
+            </p>
         </div>
     </div>
 </section>
 
+<!-- VIDEO APRESENTAÇÃO -->
+<section id="video-apresentacao" class="video-section">
+
+    <h2>Presentation Video</h2>
+
+    <video class="presentation-video" controls>
+        <source src="Video_apresentacao_Rita_Seixas.mp4" type="video/mp4">
+        O seu navegador não suporta vídeos HTML5.
+    </video>
+
+</section>
+
+<!-- PROJETOS -->
 <section id="projetos">
     <h2>PÓS GRADUAÇÃO: NOVA IMS – GEOSPATIAL DATA SCIENCE</h2>
-    <p>This postgraduate course gave me the opportunity to explore practical topics across various disciplines aligned with my interests.</p>
+    <p>This postgraduate program provided me with the opportunity to develop practical skills across several disciplines closely related to my interests in geospatial analysis, GIS, and data science.</p>
 
     <h2>Subjects</h2>
     <ul class="compact-list">
